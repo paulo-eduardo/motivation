@@ -1,5 +1,6 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
+import * as morgan from "morgan";
 
 class App {
   public app: express.Application;
@@ -15,6 +16,7 @@ class App {
 
   private initializeMiddlewares() {
     this.app.use(bodyParser.json());
+    this.app.use(morgan("combined"));
   }
 
   private initializeControllers(controllers) {
