@@ -12,7 +12,7 @@ class HealthcheckController {
     this.router.get(this.path, this.checkHealth);
   }
 
-  checkHealth = (request: express.Request, response: express.Response) => {
+  checkHealth = (_request: express.Request, response: express.Response) => {
     response.status(200).send("Server is running!");
   };
 }

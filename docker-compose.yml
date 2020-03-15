@@ -1,0 +1,33 @@
+version: '3.6'
+services:
+  # MongoDB
+  accoutsdb:
+    image: mongo:latest
+    restart: always
+    environment:
+      - MONGO_DATA_DIR=/data/db/account
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - '27017:27017'
+
+  # API
+  account:
+    build:
+      context: ./account
+      target: dev
+    restart: always
+    volumes:
+      - ./account:/account
+    ports:
+      - '3000:3000'
+    links:
+      - accoutsdb
+    depends_on:
+      - accoutsdb
+    env_file:
+      - ./account/.env
+
+volumes:
+  mongodb-data:
