@@ -1,6 +1,7 @@
 import * as express from "express";
+import Controller from "../interfaces/controller";
 
-class HealthcheckController {
+class HealthcheckController implements Controller {
   public path = "/healthcheck";
   public router = express.Router();
 

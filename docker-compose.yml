@@ -1,11 +1,11 @@
 version: '3.6'
 services:
   # MongoDB
-  accoutsdb:
+  studentdb:
     image: mongo:latest
     restart: always
     environment:
-      - MONGO_DATA_DIR=/data/db/account
+      - MONGO_DATA_DIR=/data/db/student
       - MONGO_LOG_DIR=/dev/null
     volumes:
       - mongodb-data:/data/db
@@ -13,21 +13,21 @@ services:
       - '27017:27017'
 
   # API
-  account:
+  student:
     build:
-      context: ./account
+      context: ./student
       target: dev
     restart: always
     volumes:
-      - ./account:/account
+      - ./student:/student
     ports:
       - '3000:3000'
     links:
-      - accoutsdb
+      - studentdb
     depends_on:
-      - accoutsdb
+      - studentdb
     env_file:
-      - ./account/.env
+      - ./student/.env
 
 volumes:
   mongodb-data:
