@@ -4,9 +4,6 @@ import StudentController from "./student/student.controller";
 import validateEnv from "./utils/validateEnv";
 
 validateEnv();
-const app = new App(
-  [new HealthcheckController(), new StudentController()],
-  Number(process.env.PORT)
-);
+const app = new App([new HealthcheckController(), new StudentController()]);
 
 app.listen();

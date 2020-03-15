@@ -13,11 +13,18 @@ class StudentService {
   };
 
   getByName = async (name: string) => {
-    return await this.students.find({ name });
+    return await this.students.find({
+      name: {
+        $regex: new RegExp(name, "ig")
+      }
+    });
   };
 
   modify = async (id: string, student: Student) => {
-    return await this.students.findByIdAndUpdate(id, student, { new: true });
+    const updatedStudent = await this.students.findByIdAndUpdate(id, student, {
+      new: true
+    });
+    return updatedStudent;
   };
 
   create = async (student: Student) => {
