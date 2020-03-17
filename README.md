@@ -1,5 +1,7 @@
 # Welcome to my Motivation Project
 
+This project is a prototype to track motivation of the student during an activite. This is to help professor know and work around to be sure to keep the student motivation high.
+
 ## Prerequisites
 
 Make sure to have the following CLI tools: `docker` and `docker-compose` to get it running properly.
