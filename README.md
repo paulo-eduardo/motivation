@@ -10,7 +10,7 @@ Make sure to have the following CLI tools: `docker` and `docker-compose` to get 
 
 ### First step
 
-Download the source code. You could download the source code by accessing it over this link: https://github.com/DanZeuss/schoology/archive/master.zip, or, using the `git` to clone it by running the command:
+Download the source code. You could download the source code by accessing it over this link: https://github.com/Paulo-Eduardo/motivation/archive/develop.zip, or, using the `git` to clone it by running the command:
 
 ```
 git clone https://github.com/Paulo-Eduardo/motivation/tree/develop
